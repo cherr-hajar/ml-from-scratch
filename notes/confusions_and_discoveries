@@ -1,0 +1,7 @@
+# confusions_and_discoveries.md
+
+## Day 1
+
+* Syntax error from an extra `=` in the numerical derivative line.
+* Case mismatch between `x` and `X` broke the meshgrid and plotting.
+* Numerical differentiation is always approximate because `h` can never be 0, only very small.
