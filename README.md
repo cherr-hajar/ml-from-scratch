@@ -14,3 +14,9 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - Partial derivatives by hand
 - Numerical gradient estimation
 - Contour plot of:  f(x,y) = x² + y²
+
+### Day 3
+- Chain rule on composed functions (f(g(x)))  
+- Verified df/dx analytically and numerically using finite differences  
+- Interpreted chain rule as propagation of change through layers  
+- Connected repeated multiplication of local derivatives to vanishing gradients in neural networks  

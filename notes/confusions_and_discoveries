@@ -5,3 +5,11 @@
 * Syntax error from an extra `=` in the numerical derivative line.
 * Case mismatch between `x` and `X` broke the meshgrid and plotting.
 * Numerical differentiation is always approximate because `h` can never be 0, only very small.
+
+## Day 3
+
+* Chain rule initially felt like “multiplying formulas”, but it is actually how change travels through composed functions step by step.
+* A mistake in multiplication (confusing 3 × 4 = 12 vs 24) revealed how easily algebra slips even when concepts are correct.
+* Vanishing gradient intuition clarified: repeated multiplication of numbers < 1 shrinks the signal toward zero, starving early layers of learning signal.
+* Key realization: gradients are not computed in one jump — they are propagated backward layer by layer, each contributing a local deriva
+
