@@ -1,58 +1,43 @@
-# confusions_and_discoveries.md
+# Confusions and Discoveries
 
-## Day 1
+Learning ML is mostly just repeatedly breaking things, misunderstanding them, and then realizing the mistake was actually the lesson.
 
-* Syntax error from an extra `=` in the numerical derivative line.
-* Case mismatch between `x` and `X` broke the meshgrid and plotting.
-* Numerical differentiation is always approximate because `h` can never be 0, only very small.
+---
 
-## Day 3
+## mathematical_foundations
 
-* Chain rule initially felt like “multiplying formulas”, but it is actually how change travels through composed functions step by step.
-* Vanishing gradient intuition clarified: repeated multiplication of numbers < 1 shrinks the signal toward zero, starving early layers of learning signal.
-* Key realization: gradients are not computed in one jump — they are propagated backward layer by layer, each contributing a local deriva
+### derivatives
 
-## Day 3
-*The term "nodes was confusing at first at first but after I drew the computational graph by hand and saw 
-e = (a + b) × c        a=2, b=3, c=4
+- Syntax error from an extra `=` in the numerical derivative line
+- Case mismatch between `x` and `X` broke meshgrid and plotting
+- Numerical differentiation is always approximate because `h` can never be 0, only very small
+- Chain rule initially felt like “multiplying formulas”, but it is actually how change travels through composed functions step by step
+- Vanishing gradient intuition clarified: repeated multiplication of numbers < 1 shrinks the signal toward zero, starving early layers of learning signal
 
+---
 
-FORWARD PASS
-                                        
-   a=2        b=3        c=4
-    |           |          |
-    +-----+-----+          |
-          |                |
-        (a+b)              |
-          5                |
-          |                |
-          +-------+--------+
-                  |
-               (a+b)*c
-                  |
-                 e=20
+## computation_graphs
 
+- The idea of “nodes” was confusing at first until drawing the computation graph by hand made it concrete
 
-BACKWARD PASS
+### Example:
+e = (a + b) × c  
+a = 2, b = 3, c = 4
 
-   da=4       db=4       dc=5
-    ^           ^          ^
-    |           |          |
-  d(a+b)/da=1  |    d(e)/dc = (a+b) = 5
-    |    d(a+b)/db=1       |
-    +-----+-----+          |
-          ^                |
-     d(e)/d(a+b) = c = 4   |
-          |                |
-          +-------+--------+
-                  ^
-              d(e)/de = 1   <-- seed
+### Forward pass:
+- a + b = 5  
+- e = 20  
 
-it all became clear.
+### Backward pass:
+- de/da = 4  
+- de/db = 4  
+- de/dc = 5  
 
-* I also implemented the computation graph and it matched the backward pass I drew 
+- d(a+b)/da = 1  
+- d(a+b)/db = 1  
+- d(e)/d(a+b) = c = 4  
+- d(e)/dc = (a + b) = 5  
 
-The gradients:
-  d(e)/da = 4 * 1 = 4
-  d(e)/db = 4 * 1 = 4
-  d(e)/dc = 1 * 5 = 5
+- d(e)/de = 1 (seed)
+
+- Implementing the computation graph matched exactly the backward pass drawn by hand
