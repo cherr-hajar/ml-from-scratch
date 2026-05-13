@@ -9,7 +9,50 @@
 ## Day 3
 
 * Chain rule initially felt like “multiplying formulas”, but it is actually how change travels through composed functions step by step.
-* A mistake in multiplication (confusing 3 × 4 = 12 vs 24) revealed how easily algebra slips even when concepts are correct.
 * Vanishing gradient intuition clarified: repeated multiplication of numbers < 1 shrinks the signal toward zero, starving early layers of learning signal.
 * Key realization: gradients are not computed in one jump — they are propagated backward layer by layer, each contributing a local deriva
 
+## Day 3
+*The term "nodes was confusing at first at first but after I drew the computational graph by hand and saw 
+e = (a + b) × c        a=2, b=3, c=4
+
+
+FORWARD PASS
+                                        
+   a=2        b=3        c=4
+    |           |          |
+    +-----+-----+          |
+          |                |
+        (a+b)              |
+          5                |
+          |                |
+          +-------+--------+
+                  |
+               (a+b)*c
+                  |
+                 e=20
+
+
+BACKWARD PASS
+
+   da=4       db=4       dc=5
+    ^           ^          ^
+    |           |          |
+  d(a+b)/da=1  |    d(e)/dc = (a+b) = 5
+    |    d(a+b)/db=1       |
+    +-----+-----+          |
+          ^                |
+     d(e)/d(a+b) = c = 4   |
+          |                |
+          +-------+--------+
+                  ^
+              d(e)/de = 1   <-- seed
+
+it all became clear.
+
+* I also implemented the computation graph and it matched the backward pass I drew 
+
+The gradients:
+  d(e)/da = 4 * 1 = 4
+  d(e)/db = 4 * 1 = 4
+  d(e)/dc = 1 * 5 = 5
