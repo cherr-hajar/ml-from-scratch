@@ -33,4 +33,12 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
   
   e = (a + b) × c
 
+## Numpy 
+### Created arrays using:
+  - lists
+  - `zeros`
+  - `ones`
+  - `arange`
+  - `linspace`
+
 ---
