@@ -20,3 +20,7 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - Verified df/dx analytically and numerically using finite differences  
 - Interpreted chain rule as propagation of change through layers  
 - Connected repeated multiplication of local derivatives to vanishing gradients in neural networks  
+
+### Day 4
+- computation graph by hand, forward and backward pass, numerical 
+- gradient verification for e = (a+b) × c
