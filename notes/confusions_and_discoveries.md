@@ -50,3 +50,4 @@ d(e)/dc = (a + b) = 5
   - `linspace` -> number of points controls resolution
   - They are different ways of defining a range, not interchangeable
   - Arrays are fixed-type, shape-driven structures designed for vectorized computation
+  - When we multiply a float64 array by a float32 array numpy promotes the operation to the safer, more precise dtype: float64.
