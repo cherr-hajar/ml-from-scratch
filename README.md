@@ -41,9 +41,10 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
   - `arange`
   - `linspace`
 
-## Gave each array a different dtypes. 
+##g# Gave each array a different dtypes. 
 - Checked how much memory each uses with array.nbytes. 
 - Multiplied a float64 array by a float32 array and answered what dtype is the result and why.
+
 ## micrograd from scratch 
 
 ---
