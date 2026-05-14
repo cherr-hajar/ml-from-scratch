@@ -9,7 +9,7 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 
 ---
 
-## mathematical_foundations
+## mathematical foundations
 
 ### derivatives
 - Partial derivatives by hand
@@ -26,7 +26,7 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - Interpreted chain rule as propagation of change through layers
 - Connected repeated multiplication of local derivatives to vanishing gradients in neural networks
 
-### computation_graphs
+### computation graphs
 - Computation graph drawn by hand
 - Forward and backward pass intuition
 - Numerical gradient verification for:
@@ -40,5 +40,10 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
   - `ones`
   - `arange`
   - `linspace`
+
+## Gave each array a different dtypes. 
+- Checked how much memory each uses with array.nbytes. 
+- Multiplied a float64 array by a float32 array and answered what dtype is the result and why.
+## micrograd from scratch 
 
 ---
