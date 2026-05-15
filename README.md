@@ -9,7 +9,7 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 
 ---
 
-## mathematical foundations
+## Mathematical foundations
 
 ### derivatives
 - Partial derivatives by hand
@@ -34,25 +34,30 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
   e = (a + b) × c
 
 ## Numpy 
-### Created arrays using:
+### created arrays using:
   - lists
   - `zeros`
   - `ones`
   - `arange`
   - `linspace`
 
-### Gave each array a different dtypes. 
+### gave each array a different dtypes. 
 - Checked how much memory each uses with array.nbytes. 
 - Multiplied a float64 array by a float32 array and answered what dtype is the result and why.
 
-### Create a 5x5 matrix and extract the diagonal without using numpy.diagonal
+### create a 5x5 matrix and extract the diagonal without using numpy.diagonal
 - Tried 2 methods one with integer array indexing and the other using np.arange 
 
-### Extracte all elements greater than 10 using boolean indexing. 
+### extracte all elements greater than 10 using boolean indexing. 
 - Did it with no intermediate variable, so the boolean array never gets stored anywhere
 
-### Reversed Every Row Without a Loop
+### reversed Every Row Without a Loop
 
-## micrograd from scratch 
+## Micrograd from scratch 
+### built computation graph
+- Built a computational graph with th expression from ml-from-scratch/mathematical_foundations
+/computation_graphs
+- When you write e = (a + b) * c, most languages just compute 20 and forget everything. Your Value class remembers: the result, what operation made it, which values were its inputs
+
 
 ---
