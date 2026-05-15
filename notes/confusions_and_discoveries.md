@@ -55,3 +55,19 @@ d(e)/dc = (a + b) = 5
 
 *Learned:
 - when you pass two arrays of equal shape, numpy pairs them up element by element and fetches one value per pair
+
+## micrograd_from_scratch
+### value_class
+
+*Learned:
+- defaults go in the signature _op='' not in the body
+- self + other causes infinite recursion, you need self.data + other.data
+- __add__ only takes other, nothing else
+- __repr__ makes your objects print nicely
+
+*What confused me:
+- Why tuple → set: convention for passing, set for storing
+- Why _prev not _children: just internal naming
+- The _ prefix: means "private, don't touch from outside"
+- Why not define children as a set from the start: because (a, b) is cleaner to pass than {a, b}
+
