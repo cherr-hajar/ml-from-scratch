@@ -41,9 +41,17 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
   - `arange`
   - `linspace`
 
-##g# Gave each array a different dtypes. 
+### Gave each array a different dtypes. 
 - Checked how much memory each uses with array.nbytes. 
 - Multiplied a float64 array by a float32 array and answered what dtype is the result and why.
+
+### Create a 5x5 matrix and extract the diagonal without using numpy.diagonal
+- Tried 2 methods one with integer array indexing and the other using np.arange 
+
+### Extracte all elements greater than 10 using boolean indexing. 
+- Did it with no intermediate variable, so the boolean array never gets stored anywhere
+
+### Reversed Every Row Without a Loop
 
 ## micrograd from scratch 
 

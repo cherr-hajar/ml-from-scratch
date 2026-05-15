@@ -44,10 +44,14 @@ d(e)/dc = (a + b) = 5
 
 ### arrays and core intuition
 
-
 * Learned:
   - `arange` -> step size controls spacing
   - `linspace` -> number of points controls resolution
   - They are different ways of defining a range, not interchangeable
   - Arrays are fixed-type, shape-driven structures designed for vectorized computation
   - When we multiply a float64 array by a float32 array numpy promotes the operation to the safer, more precise dtype: float64.
+
+### indexing and slicing
+
+*Learned:
+- when you pass two arrays of equal shape, numpy pairs them up element by element and fetches one value per pair
