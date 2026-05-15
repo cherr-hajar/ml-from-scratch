@@ -64,10 +64,13 @@ d(e)/dc = (a + b) = 5
 - self + other causes infinite recursion, you need self.data + other.data
 - __add__ only takes other, nothing else
 - __repr__ makes your objects print nicely
+- every operation owns its own _backward that knows its specific chain rule
+- addition's rule is simple: both inputs get exactly out.grad because nudging either by 1 changes the output by 1
 
 *What confused me:
 - Why tuple → set: convention for passing, set for storing
 - Why _prev not _children: just internal naming
 - The _ prefix: means "private, don't touch from outside"
 - Why not define children as a set from the start: because (a, b) is cleaner to pass than {a, b}
+- using self.grad instead of out.grad, the gradient flows back from out, not from self
 
