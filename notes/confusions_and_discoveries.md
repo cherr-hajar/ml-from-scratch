@@ -69,8 +69,11 @@ d(e)/dc = (a + b) = 5
 - += vs = — gradients accumulate, not overwrite
 - out.grad not out.data, gradient flows back, not the value
 - each input's gradient is the other input's value times out.grad
-
-*What confused me:
+- build_topo visits every node exactly once using visited set to avoid duplicates
+- topo builds in forward order [a, b, tmp, c, e], reversed() flips it for backprop
+- self.grad = 1 because the output's gradient with respect to itself is always 1
+- v not self inside build_topo because v changes each recursion, self is always the same object
+- _backward = lambda: None is replaced by the real gradient function inside each operation
 - Why tuple → set: convention for passing, set for storing
 - Why _prev not _children: just internal naming
 - The _ prefix: means "private, don't touch from outside"
