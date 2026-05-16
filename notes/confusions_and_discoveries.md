@@ -66,6 +66,9 @@ d(e)/dc = (a + b) = 5
 - __repr__ makes your objects print nicely
 - every operation owns its own _backward that knows its specific chain rule
 - addition's rule is simple: both inputs get exactly out.grad because nudging either by 1 changes the output by 1
+- += vs = — gradients accumulate, not overwrite
+- out.grad not out.data, gradient flows back, not the value
+- each input's gradient is the other input's value times out.grad
 
 *What confused me:
 - Why tuple → set: convention for passing, set for storing
