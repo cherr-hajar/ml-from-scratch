@@ -59,7 +59,7 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 /computation_graphs
 - When you write e = (a + b) * c, most languages just compute 20 and forget everything. Your Value class remembers: the result, what operation made it, which values were its inputs
 
-### wrote the backward pass for addition
+### wrote the backward pass for addition and multiplication
  — when called, it tells a and b how much they contributed to the output.
 
 
