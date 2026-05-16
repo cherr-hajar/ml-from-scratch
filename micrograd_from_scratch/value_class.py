@@ -20,14 +20,20 @@ class Value:
     
     def __mul__(self, other):
         out = Value(self.data * other.data, (self, other), '*')
+        def _backward():
+            self.grad += out.grad * other.data
+            other.grad += self.data * out.grad
+        out._backward = _backward
         return out
     
 a = Value(2)
 b = Value(3)
-c = Value(4)
-e = (a + b) * c
-print(e.data) 
-print(e._op) 
-print(e._prev) 
+e = a * b
+
+e.grad = 1
+e._backward()
+
+print(a.grad) 
+print(b.grad)
 
 
