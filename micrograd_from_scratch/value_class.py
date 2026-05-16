@@ -41,6 +41,10 @@ class Value():
         self.grad = 1
         for v in reversed(topo):
             v._backward()
+        
+    def tanh(self):
+        out = Value(self.data, (self,), 'tanh')
+        return out
 
 a = Value(2)
 b = Value(3)
