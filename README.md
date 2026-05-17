@@ -66,6 +66,6 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - topological sort to find all nodes in correct order
 - backpropagation through the full expression e = (a + b) * c
 - verified all gradients match manual calculation
-- implemented tanh activation function with forward and backward passc
+- implemented tanh activation function with forward and backward pass
 
 ---
