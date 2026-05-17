@@ -72,4 +72,8 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - takes n inputs with random weights and bias
 - computes weighted sum, adds bias, passes through tanh
 - gradients flow automatically through weights and bias
+
+### built Layer class
+- takes nin and nout to create nout neurons each with nin inputs
+- runs same input through all neurons, returns list of outputs
 ---
