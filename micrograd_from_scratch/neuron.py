@@ -8,9 +8,6 @@ class Neuron():
 
     def __call__(self, x):
         acts = [xi * wi for xi, wi in zip(x, self.weights)]
-        
-    def __call__(self, x):
-        acts = [xi * wi for xi, wi in zip(x, self.weights)]
         return sum(acts, self.bias).tanh()
     
 n = Neuron(2)
