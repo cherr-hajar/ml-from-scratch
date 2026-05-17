@@ -69,5 +69,7 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - implemented tanh activation function with forward and backward pass
 
 ### implemented Neuron class 
-— takes inputs, applies weights and bias, passes through tanh, gradients flow automatically
+- takes n inputs with random weights and bias
+- computes weighted sum, adds bias, passes through tanh
+- gradients flow automatically through weights and bias
 ---
