@@ -83,9 +83,9 @@ d(e)/dc = (a + b) = 5
 - out.data is reused because tanh was already computed in the forward pass
 
 ### neuron_py
-- weights must be Value objects not plain numbers — otherwise gradients can't flow through them
-- weights start random to break symmetry — if all start at 0 every neuron learns the same thing
-- x.tanh() not tanh(x) — tanh is a method on Value, not a standalone function
+- weights must be Value objects not plain numbers, otherwise gradients can't flow through them
+- weights start random to break symmetry, if all start at 0 every neuron learns the same thing
+- x.tanh() not tanh(x): tanh is a method on Value, not a standalone function
 - zip pairs two lists element by element
 - sum(acts, self.bias) starts the sum from bias instead of 0
 

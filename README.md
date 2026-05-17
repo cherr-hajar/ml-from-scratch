@@ -68,4 +68,6 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - verified all gradients match manual calculation
 - implemented tanh activation function with forward and backward pass
 
+### implemented Neuron class 
+— takes inputs, applies weights and bias, passes through tanh, gradients flow automatically
 ---
