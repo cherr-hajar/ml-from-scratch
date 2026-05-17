@@ -73,7 +73,12 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - computes weighted sum, adds bias, passes through tanh
 - gradients flow automatically through weights and bias
 
-### built Layer class
+### implemented Layer class
 - takes nin and nout to create nout neurons each with nin inputs
 - runs same input through all neurons, returns list of outputs
+
+### implemented MLP class
+- stacks multiple layers where output of one becomes input of next
+- takes nin (inputs) and nouts (list of layer sizes)
+- full computation graph flows through automatically, backward pass works on the whole network
 ---
