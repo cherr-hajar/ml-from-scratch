@@ -93,4 +93,7 @@ d(e)/dc = (a + b) = 5
 -A Layer is just multiple neurons all receiving the same input but with different weights
 - neuron(x) works because Neuron has __call__ defined
 
-
+### mlp.py
+- sizes = [nin] + nouts just combines all layer sizes into one list
+- zip(sizes, sizes[1:]) creates consecutive pairs — each pair becomes one Layer
+- x = layer(x) replaces x each iteration — output of one layer becomes input of next
