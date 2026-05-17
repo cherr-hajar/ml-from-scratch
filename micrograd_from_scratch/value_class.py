@@ -1,3 +1,5 @@
+
+import math #for the tanh method
 class Value():
     def __init__(self, data, children=(), _op=''):
         self.data = data 
@@ -43,16 +45,13 @@ class Value():
             v._backward()
         
     def tanh(self):
-        out = Value(self.data, (self,), 'tanh')
+        out = Value(math.tanh(self.data), (self,), 'tanh')
+        def _backward():
+            self.grad += (1 - out.data**2) * out.grad
+        out._backward = _backward
         return out
-
-a = Value(2)
-b = Value(3)
-c = Value(4)
-e = (a + b) * c
-
-e.backward()
-
+    
+a = Value(0.5)
+a_tanh = a.tanh()
+a_tanh.backward()
 print(a.grad) 
-print(b.grad)  
-print(c.grad)  
