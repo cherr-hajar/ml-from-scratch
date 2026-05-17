@@ -79,4 +79,6 @@ d(e)/dc = (a + b) = 5
 - The _ prefix: means "private, don't touch from outside"
 - Why not define children as a set from the start: because (a, b) is cleaner to pass than {a, b}
 - using self.grad instead of out.grad, the gradient flows back from out, not from self
+- tanh backward is (1 - out.data**2) * out.grad — same chain rule pattern, just a different derivative
+- out.data is reused because tanh was already computed in the forward pass
 
