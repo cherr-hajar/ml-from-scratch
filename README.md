@@ -82,8 +82,9 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - takes nin (inputs) and nouts (list of layer sizes)
 - full computation graph flows through automatically, backward pass works on the whole network
 
-### binary classification dataset
+### training loop & binary classification dataset
 - 16 points, two classes, separated by y = 2x + 3
 - plotted with matplotlib showing decision boundary
+- implemented MSE loss function using Value class so gradients flow through it
 
 ---
