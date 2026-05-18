@@ -1,4 +1,3 @@
-
 import math #for the tanh method
 class Value():
     def __init__(self, data, children=(), _op=''):
@@ -14,6 +13,7 @@ class Value():
 
     
     def __add__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
         out = Value(self.data + other.data, (self, other), '+')
         def _backward():
             self.grad += out.grad
@@ -21,13 +21,20 @@ class Value():
         out._backward =_backward
         return out
 
+    def __radd__(self, other):
+        return self + other
+
     def __mul__(self, other):
+        other = other if isinstance(other, Value) else Value(other)
         out = Value(self.data * other.data, (self, other), '*')
         def _backward():
             self.grad += out.grad * other.data
             other.grad += out.grad * self.data
         out._backward =_backward
         return out
+
+    def __rmul__(self, other):
+        return self * other
     
     def backward(self):
         topo = []
@@ -51,7 +58,23 @@ class Value():
         out._backward = _backward
         return out
     
+    def __neg__(self):
+        return self * -1
+    
+    def __sub__(self, other):
+        return self + (-other)
+
+    def __pow__(self, other):
+        out = Value(self.data ** other, (self,), f'**{other}')
+        def _backward():
+            self.grad += other * (self.data ** (other-1)) * out.grad
+        out._backward = _backward
+        return out
+    def __truediv__(self, other):
+        return self * other**-1
+
+
 a = Value(0.5)
 a_tanh = a.tanh()
 a_tanh.backward()
-print(a.grad) 
+print(a.grad)
