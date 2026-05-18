@@ -81,6 +81,8 @@ d(e)/dc = (a + b) = 5
 - using self.grad instead of out.grad, the gradient flows back from out, not from self
 - tanh backward is (1 - out.data**2) * out.grad — same chain rule pattern, just a different derivative
 - out.data is reused because tanh was already computed in the forward pass
+- __pow__ backward uses power rule: n * x^(n-1) * out.grad
+- __truediv__ is just multiplying by the inverse: self * other**-1
 
 ### neuron.py
 - weights must be Value objects not plain numbers, otherwise gradients can't flow through them
@@ -101,3 +103,6 @@ d(e)/dc = (a + b) = 5
 ### training_loop.ipynb
 - list comprehension [1 if y > 2*x+3 else 0 for x, y in points] generates all labels in one line
 - zip(points, labels) pairs each point with its label for plotting
+- MSE = average of squared differences between predictions and labels
+- squaring errors punishes big mistakes more than small ones
+- p[0] needed because MLP returns a list, not a single Value
