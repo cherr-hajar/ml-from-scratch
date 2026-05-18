@@ -97,3 +97,7 @@ d(e)/dc = (a + b) = 5
 - sizes = [nin] + nouts just combines all layer sizes into one list
 - zip(sizes, sizes[1:]) creates consecutive pairs — each pair becomes one Layer
 - x = layer(x) replaces x each iteration — output of one layer becomes input of next
+
+### training_loop.ipynb
+- list comprehension [1 if y > 2*x+3 else 0 for x, y in points] generates all labels in one line
+- zip(points, labels) pairs each point with its label for plotting
