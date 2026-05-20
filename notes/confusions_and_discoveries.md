@@ -109,3 +109,8 @@ d(e)/dc = (a + b) = 5
 - MSE = average of squared differences between predictions and labels
 - squaring errors punishes big mistakes more than small ones
 - p[0] needed because MLP returns a list, not a single Value
+-  If we don't update (reset to 0) the gradients,  the gradients from the previous iteration will add up with the new ones 
+- why reset gradients? if you don't, old gradients add to new ones, giving wrong updates
+- gradient descent: move weights opposite to gradient direction (subtract gradient × learning rate)
+- parameters() is essential because you need to reset and update ALL weights and biases together
+
