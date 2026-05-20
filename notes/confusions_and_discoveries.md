@@ -90,15 +90,18 @@ d(e)/dc = (a + b) = 5
 - x.tanh() not tanh(x): tanh is a method on Value, not a standalone function
 - zip pairs two lists element by element
 - sum(acts, self.bias) starts the sum from bias instead of 0
+- For each neuron, collect neuron.weights and neuron.bias
 
 ### layer.py
 -A Layer is just multiple neurons all receiving the same input but with different weights
 - neuron(x) works because Neuron has __call__ defined
+-  collect parameters from all its neurons.
 
 ### mlp.py
 - sizes = [nin] + nouts just combines all layer sizes into one list
 - zip(sizes, sizes[1:]) creates consecutive pairs — each pair becomes one Layer
 - x = layer(x) replaces x each iteration — output of one layer becomes input of next
+- collect parameters from all its layers.
 
 ### training_loop.ipynb
 - list comprehension [1 if y > 2*x+3 else 0 for x, y in points] generates all labels in one line
