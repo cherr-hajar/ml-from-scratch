@@ -10,6 +10,9 @@ class Neuron():
         acts = [xi * wi for xi, wi in zip(x, self.weights)]
         return sum(acts, self.bias).tanh()
     
+    def parameters(self):
+        return self.weights + [self.bias]
+    
 n = Neuron(2)
 x = [Value(1.0), Value(0.5)]
 out = n(x)
