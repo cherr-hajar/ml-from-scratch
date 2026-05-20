@@ -72,15 +72,18 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - takes n inputs with random weights and bias
 - computes weighted sum, adds bias, passes through tanh
 - gradients flow automatically through weights and bias
+- For each neuron, collect neuron.weights and neuron.bias
 
 ### implemented Layer class
 - takes nin and nout to create nout neurons each with nin inputs
 - runs same input through all neurons, returns list of outputs
+-  collect parameters from all its neurons.
 
 ### implemented MLP class
 - stacks multiple layers where output of one becomes input of next
 - takes nin (inputs) and nouts (list of layer sizes)
 - full computation graph flows through automatically, backward pass works on the whole network
+- collect parameters from all its layers.
 
 ### training loop & binary classification dataset
 - 16 points, two classes, separated by y = 2x + 3
