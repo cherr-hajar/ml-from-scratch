@@ -89,5 +89,10 @@ Learning ML from mathematical foundations up. Derivatives by hand before touchin
 - 16 points, two classes, separated by y = 2x + 3
 - plotted with matplotlib showing decision boundary
 - implemented MSE loss function using Value class so gradients flow through it
+- implemented `parameters()` method for Neuron, Layer, and MLP to collect all weights and biases
+- built training loop: forward pass → compute loss → reset gradients → backward pass → update weights
+- ran 100 iterations of gradient descent with learning rate 0.01
+- loss decreased from 0.24 to 0.03, showing the network learned
+- visualized decision boundary: network learned a boundary very close to the true y = 2x + 3 line
 
 ---
