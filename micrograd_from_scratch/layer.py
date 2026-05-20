@@ -6,6 +6,11 @@ class Layer():
 
     def __call__(self, x):
         return [neuron(x) for neuron in self.neurons]
+    
+    
+    def parameters(self):
+        return [p for neuron in self.neurons for p in neuron.parameters()]
 layer = Layer(2, 3)
 x = [Value(1.0), Value(0.5)]
 print(layer(x))
+
